@@ -584,7 +584,7 @@
                 </a>
             </li> -->
             <li data-menuanchor="#inst">
-                <a href="./gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="text-decoration:none">
+                <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="text-decoration:none">
                     <i class="fa fa-instagram w3-xlarge" aria-hidden="true" ></i>
                     <p>GALLERY</p>
                 </a>
@@ -2096,7 +2096,479 @@ a:active .line.-bottom {
 <br>
 <br>
 
+<style>
+      * {
+        box-sizing: border-box;
+      }
 
+      body {
+        margin: 0;
+        font-family: Arial;
+      }
+
+      .header {
+        text-align: center;
+        padding: 32px;
+      }
+
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .column {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      .column img:hover {
+        position: relative;
+        transition: all 0.3s;
+        transform: scale(1.5);
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
+      /*Eliminates padding, centers the thumbnail */
+
+      /*body, html {
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+
+/* Styles the thumbnail */
+
+      a.lightbox img {
+        /*border: 3px solid white;
+*/
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        margin: 4px 15px 15px 15px;
+      }
+
+      /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+      .lightbox-target {
+        position: fixed; /*
+top: -100%;
+width: 100%;*/
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        opacity: 0;
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        overflow: hidden;
+      }
+
+      /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+      .lightbox-target img {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 0%;
+        max-width: 0%;
+        border: 3px solid white;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+      }
+
+      /* Styles the close link, adds the slide down transition */
+
+      a.lightbox-close {
+        display: block;
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        background: white;
+        color: black;
+        text-decoration: none;
+        position: absolute;
+        top: -80px;
+        right: 0;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+      }
+
+      /* Provides part of the "X" to eliminate an image from the close link */
+
+      a.lightbox-close:before {
+        content: "";
+        display: block;
+        height: 30px;
+        width: 1px;
+        background: black;
+        position: absolute;
+        left: 26px;
+        top: 10px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      /* Provides part of the "X" to eliminate an image from the close link */
+
+      a.lightbox-close:after {
+        content: "";
+        display: block;
+        height: 30px;
+        width: 1px;
+        background: black;
+        position: absolute;
+        left: 26px;
+        top: 10px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+      .lightbox-target:target {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+      }
+
+      .lightbox-target:target img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .lightbox-target:target a.lightbox-close {
+        top: 0px;
+      }
+
+      @media (min-width: 1025px) { 
+        .gallery{
+            padding-left: 400px;
+        }
+    }
+    </style>
+    <div class="w3-center w3-container" style="margin-bottom:50px" id="gallery">
+    <p style="font-size:50px; font-family:'Century Gothic'">Gallery</p>
+    </div>
+
+    <div class="lightbox-target" id="one">
+      <img src="./gallery_pics/one.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="two">
+      <img src="./gallery_pics/two.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="four">
+      <img src="./gallery_pics/four.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="three">
+      <img src="./gallery_pics/three.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="fourteen">
+      <img src="./gallery_pics/fourteen.jpeg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="five">
+      <img src="./gallery_pics/five.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="six">
+      <img src="./gallery_pics/six.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="seven">
+      <img src="./gallery_pics/seven.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="eight">
+      <img src="./gallery_pics/eight.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="nine">
+      <img src="./gallery_pics/nine.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="ten">
+      <img src="./gallery_pics/ten.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="eleven">
+      <img src="./gallery_pics/eleven.jpeg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="twelve">
+      <img src="./gallery_pics/twelve.jpeg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="thirteen">
+      <img src="./gallery_pics/thirteen.jpeg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="fifteen">
+      <img src="./gallery_pics/fifteen.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="lightbox-target" id="sixteen">
+      <img src="./gallery_pics/sixteen.jpg" />
+      <a class="lightbox-close" href="#"></a>
+    </div>
+
+    <div class="gallery">
+    <div class="row">
+      <div class="column">
+        <a class="lightbox" href="#one"><img src="./gallery_pics/one.jpg"/></a>
+        <a class="lightbox" href="#three"
+          ><img src="./gallery_pics/three.jpg"
+        /></a>
+        <a class="lightbox" href="#fourteen"
+          ><img src="./gallery_pics/fourteen.jpeg"
+        /></a>
+        <a class="lightbox" href="#nine"
+          ><img src="./gallery_pics/nine.jpg"
+        /></a>
+      </div>
+
+      <div class="column">
+        <a class="lightbox" href="#five"
+          ><img src="./gallery_pics/five.jpg"
+        /></a>
+        <a class="lightbox" href="#six"><img src="./gallery_pics/six.jpg"/></a>
+        <a class="lightbox" href="#seven"
+          ><img src="./gallery_pics/seven.jpg"
+        /></a>
+        <a class="lightbox" href="#eleven"
+          ><img src="./gallery_pics/eleven.jpeg"
+        /></a>
+        <a class="lightbox" href="#twelve"
+          ><img src="./gallery_pics/twelve.jpeg"
+        /></a>
+      </div>
+
+      <div class="column">
+        <a class="lightbox" href="#eight"
+          ><img src="./gallery_pics/eight.jpg"
+        /></a>
+        <a class="lightbox" href="#four"
+          ><img src="./gallery_pics/four.jpg"
+        /></a>
+
+        <a class="lightbox" href="#thirteen"
+          ><img src="./gallery_pics/thirteen.jpeg"
+        /></a>
+
+        <a class="lightbox" href="#fifteen"
+          ><img src="./gallery_pics/fifteen.jpg"
+        /></a>
+      </div>
+
+
+    </div>
+    </div>
+
+
+<style type="text/css">
+    @media (max-width: 480px) { 
+        .gallery_mobile{
+            display: block !important;
+        }
+        .gallery{
+            display: none;
+        }
+</style>
+<div class="w3-content w3-display-container gallery_mobile"   style="max-width:1080px; max-height:700px; display: none">
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/one.jpg">
+
+        </div>
+
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/two.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/three.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/four.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/five.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/six.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/seven.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/eight.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/nine.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/ten.jpg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/eleven.jpeg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/twelve.jpeg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/thirteen.jpeg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/fourteen.jpeg">
+        </div>
+    </div>
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/fifteen.jpg">
+        </div>
+    </div>
+
+
+    <div class="mySlides3 w3-row">
+        <div class="w3-col l6 m12 s12" align="Center">
+            <img class="w3-animate-opacity w3-image" src="./gallery_pics/sixteen.jpg">
+        </div>
+    </div>
+
+            
+            <button class="w3-btn w3-transparent w3-display-left w3-large w3-xlarge " style="
+            background: 0%;
+            color: #F6DBA6;outline: none;" onclick="plusDivs2(-1)">&#10094;</button>
+            <button class="w3-btn w3-transparent w3-display-right w3-xlarge w3-large" style="
+                background: 0%;
+                color: #F6DBA6;outline: none;" onclick="plusDivs2(1)">&#10095;</button>
+</div>
+        
+        <script>
+            var slideIndex2 = 1;
+            showDivs2(slideIndex2);
+
+            function plusDivs2(n2) {
+                showDivs2(slideIndex2 += n2);
+            }
+
+            function showDivs2(n2) {
+                var i2;
+                var x2 = document.getElementsByClassName("mySlides3");
+                if (n2 > x2.length) {
+                    slideIndex2 = 1
+                }
+                if (n2 < 1) {
+                    slideIndex2 = x2.length
+                }
+                for (i2 = 0; i2 < x2.length; i2++) {
+                    x2[i2].style.display = "none";
+                }
+                x2[slideIndex2 - 1].style.display = "block";
+            }
+        </script>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+      
 <!--Contact Section-->
 <!--div class="w3-padding-64 w3-content w3-text-grey" id="cont" style="font-size:22px"-->
     <!--div class="w3-row">
